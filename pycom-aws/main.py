@@ -33,6 +33,8 @@ pycomAwsMQTTClient.configureLastWill(config.LAST_WILL_TOPIC, config.LAST_WILL_MS
 #Connect to MQTT Host
 if pycomAwsMQTTClient.connect():
     print('AWS connection succeeded')
+elif not pycomAwsMQTTClient.connect():
+    prin('AWS is not connected')
 
 # Subscribe to topic
 pycomAwsMQTTClient.subscribe(config.TOPIC, 1, customCallback)
